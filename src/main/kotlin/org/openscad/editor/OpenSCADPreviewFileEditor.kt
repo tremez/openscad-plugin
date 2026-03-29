@@ -228,7 +228,7 @@ class OpenSCADPreviewFileEditor(
         // Flush in-memory VFS changes to disk for this file before rendering,
         // otherwise OpenSCAD reads stale file content
 
-        ApplicationManager.application.runWriteAction {
+        ApplicationManager.getApplication().runWriteAction {
           FileDocumentManager.getInstance().getDocument(file)?.let {
                 FileDocumentManager.getInstance().saveDocument(it)
             }
